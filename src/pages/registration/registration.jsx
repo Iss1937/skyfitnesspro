@@ -50,7 +50,7 @@ export const LoginSignup = () => {
     }
   };
 
-  // This function writes additional user data to the Firebase database
+  
   function writeUserData(userId, email) {
     const db = getDatabase();
     set(ref(db, 'users/' + userId), {

@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getCurrentUser } from '../api';
 import { setFullCurrentUser } from '../../store/userSlice';
 import { Header } from '../../components/header/Header';
-import { Link, Outlet, useNavigate } from 'react-router-dom'; // Import useNavigate here
+import { Link, Outlet, useNavigate } from 'react-router-dom'; 
 
 export const Profile = () => {
   const dispatch = useDispatch();
   const currentId = localStorage.getItem('userId');
   const fullCurrentUser = useSelector((state) => state.userApp.fullCurrentUser);
   const [userCourses, setUserCourses] = useState([]);
-  const navigate = useNavigate(); // useNavigate called at the top level
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (fullCurrentUser) {
@@ -25,13 +25,13 @@ export const Profile = () => {
       });
     }
   }, [fullCurrentUser, currentId, dispatch]);
-  // These functions are defined in the body of the component but outside the useEffect hook.
+  
   const handleChangeLogin = () => {
-    navigate('newLogin'); // Example route, replace with your actual path
+    navigate('newLogin'); 
   };
 
   const handleChangePassword = () => {
-    navigate('newPassword'); // Example route, replace with your actual path
+    navigate('newPassword'); 
   };
 
   return (

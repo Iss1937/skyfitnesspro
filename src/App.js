@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { AppRoutes } from './routes';
 import { useDispatch } from 'react-redux';
-import { auth } from './firebase'; // Make sure this path matches your Firebase auth configuration import
+import { auth } from './firebase'; 
 import {
   getAllCourses,
   getAllWorkouts,
@@ -28,7 +28,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         setCurrentUser(user);
-        // Optionally, you can dispatch to your Redux store here
+        
       } else {
         setCurrentUser(null);
       }

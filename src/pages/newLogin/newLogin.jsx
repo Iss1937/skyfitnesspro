@@ -1,37 +1,45 @@
 import React, { useState } from 'react';
 import { Button } from '../../UI/Button/Button';
 import { Logo } from '../../UI/Logo/Logo';
-import style from './NewLogin.module.scss'; // Ensure this matches your filename
+import style from './NewLogin.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, updateEmail } from 'firebase/auth'; // Import Firebase Auth functions
+import { getAuth, updateEmail } from 'firebase/auth';
+import { doc, updateDoc, getFirestore } from 'firebase/firestore';
 import { hidePopupFlag } from '../../components/hidePopup/hidePopupFlag';
 
 export const NewLogin = () => {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
-  const auth = getAuth(); // Initialize Firebase Auth
-  console.log(auth);
+  const auth = getAuth();
+  const db = getFirestore(); 
+
   const handleInputChange = (event) => {
     setEmail(event.target.value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const user = auth.currentUser; // Get the current user
+    const user = auth.currentUser;
 
     if (user) {
       try {
-        console.log(user, email);
-        await updateEmail(user, email); // Update the user's email
-        console.log('Email updated successfully');
-        navigate('/profile'); // Navigate to profile after successful update
+        // Обновляем email в Firebase Authentication
+        await updateEmail(user, email);
+        console.log("Email успешно обновлен в Firebase Authentication.");
+
+        
+        const userDocRef = doc(db, 'users', user.uid);
+        await updateDoc(userDocRef, {
+          email: email, // Обновляем поле email
+        });
+        console.log("Email успешно обновлен в Firestore.");
+
+        navigate('/profile'); // Навигация к профилю после успешного обновления
       } catch (error) {
-        console.error('Error updating email:', error);
-        // Handle errors here, such as permission denied or email already in use.
+        console.error('Ошибка при обновлении email:', error);
       }
     } else {
-      // Handle case where no user is signed in
-      console.log('No user is signed in to update email.');
+      console.log('Пользователь не аутентифицирован.');
     }
   };
 
@@ -70,7 +78,7 @@ export const NewLogin = () => {
             />
           </div>
         </form>
-      </div>{' '}
+      </div>
     </div>
   );
 };

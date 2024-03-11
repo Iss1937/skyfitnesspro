@@ -11,28 +11,33 @@ export const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // State to keep track of errors
+  const [error, setError] = useState(''); // Состояние для отслеживания ошибок
 
   const validateForm = () => {
     if (!email || !password) {
-      setError('Please enter both email and password.');
+      setError('Пожалуйста, введите и email, и пароль.');
       return false;
     }
-
     return true;
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return; // Stop the login process if validation fails
+    if (!validateForm()) return; // Прекращаем процесс логина, если валидация не прошла
 
     try {
       const userInfo = await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem('userId', userInfo.user.uid);
       navigate('/profile');
     } catch (error) {
-      setError(error.message); // Set the error state to display the message
-      console.error(error.message);
+      console.error(error.code); 
+      if (error.code === 'auth/user-not-found') {
+        setError('Такого пользователя не существует.');
+      } else if (error.code === 'auth/wrong-password') {
+        setError('Неверный пароль');
+      } else {
+        setError('Такого пользователя не существует');
+      }
     }
   };
 
@@ -54,8 +59,7 @@ export const Login = () => {
         <header>
           <Logo className={style.logo} />
         </header>
-        {error && <div className={style.error}>{error}</div>}{' '}
-        {/* Display any authentication errors here */}
+        {error && <div className={style.error}>{error}</div>} {/* Отображаем ошибки аутентификации */}
         <div className={style.inputs}>
           <div className={style.input}>
             <input
@@ -65,7 +69,7 @@ export const Login = () => {
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-                setError(''); // Reset error when user starts typing
+                setError(''); // Сброс ошибки при начале ввода
               }}
             />
           </div>
@@ -76,7 +80,7 @@ export const Login = () => {
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
-                setError(''); // Reset error when user starts typing
+                setError(''); // Сброс ошибки при начале ввода
               }}
             />
           </div>
