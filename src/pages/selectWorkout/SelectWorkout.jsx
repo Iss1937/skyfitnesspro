@@ -22,6 +22,7 @@ export const SelectWorkout = () => {
 
   const dispatch = useDispatch();
   UpdateUserDetails(dispatch);
+  
   const handleClick = (el) => {
     console.log(el);
     localStorage.setItem('currentWorkout', el._id);

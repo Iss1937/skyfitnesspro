@@ -4,6 +4,7 @@ import Hand from './Hand.png';
 import { useNavigate } from 'react-router-dom';
 
 export const ProgressCheck = () => {
+  
   const navigate = useNavigate();
 
   const hidePopup = () => {

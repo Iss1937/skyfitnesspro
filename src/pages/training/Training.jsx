@@ -25,6 +25,7 @@ export const Training = () => {
   const courseName = course ? course[0].nameRU : 'название не получено'; //название текущего курса на русском
   const courseNameEN = course ? course[0].nameEN : 'название не получено'; //название текущего курса на английском
 
+  console.log(currentWorkout)
   const navigateToProgress = () => {
     navigate(`/${courseId}/training/${id}/Progress`);
     localStorage.setItem('currentCourse', courseNameEN);
@@ -67,7 +68,7 @@ export const Training = () => {
       <main>
         <h1 className={style.nameTraining}>{courseName}</h1>
         <h2 className={style.dateLink}>{workoutName}</h2>
-        <ReactPlayer url={workoutVideo} width='100%' height='720px' />
+        {/* <ReactPlayer url={workoutVideo} width='100%' height='720px' /> */}
 
         <section className={style.resultSection}>
           {workoutExercises ? (

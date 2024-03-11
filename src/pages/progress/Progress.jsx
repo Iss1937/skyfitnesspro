@@ -41,6 +41,12 @@ export const Progress = () => {
           a.made = Number(e.target.value);
           console.log(a);
           return a;
+        } else if (Number(e.target.value) < 0) {
+          alert('Количество выполненных упражнений не может быть отрицательным');
+          let a = { ...ex };
+          a.made = Number(e.target.value);
+          console.log(a);
+          return a;
         } else {
           let a = { ...ex };
           a.made = Number(e.target.value);
@@ -48,7 +54,7 @@ export const Progress = () => {
           return a;
         }
       } else {
-        console.log(ex);
+        // console.log(ex);
         return ex;
       }
     });
@@ -64,6 +70,10 @@ export const Progress = () => {
         alert('Вы ввели слишком большое число');
         fieldValidation = false;
       }
+      if (el.made < 0) {
+        alert('Количество выполненных упражнений не может быть отрицательным');
+        fieldValidation = false;
+      }
       if (el.made === el.quantity) {
         el.done = true;
         return el;
@@ -76,8 +86,8 @@ export const Progress = () => {
       //Проверяем, не превышено какое либо количество повторений
       sendProgress(numberOfRepetitionsDone);
       allTrainingCompleted(numberOfRepetitionsDone);
+      navigate(`/${params.courseId}/training/${params.id}/ProgressCheck`); //Отрисовываем "Ваш прогресс засчитан"
     }
-    navigate(`/${params.courseId}/training/${params.id}/ProgressCheck`); //Отрисовываем "Ваш прогресс засчитан"
   };
 
   //Отправляем новый прогресс в базу
@@ -141,6 +151,7 @@ export const Progress = () => {
                       name='quantity'
                       placeholder='Введите значение'
                       onChange={(e) => handleInputChange(e, el)}
+                      // min={0}
                       max={el.quantity}
                     ></input>
                   </div>
