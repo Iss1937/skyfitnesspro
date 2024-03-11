@@ -68,7 +68,7 @@ export const Training = () => {
       <main>
         <h1 className={style.nameTraining}>{courseName}</h1>
         <h2 className={style.dateLink}>{workoutName}</h2>
-        {/* <ReactPlayer url={workoutVideo} width='100%' height='720px' /> */}
+        <ReactPlayer url={workoutVideo} width='100%' height='720px' />
 
         <section className={style.resultSection}>
           {workoutExercises ? (
