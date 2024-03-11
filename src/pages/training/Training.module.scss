@@ -1,0 +1,153 @@
+.container {
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
+}
+
+.logo {
+  margin-top: 30px;
+  margin-bottom: 75px;
+}
+
+.basicText {
+  font-family: StratosSkyeng;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.nameTraining {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.dateLink {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.videoImgLogo {
+  width: 1160px;
+  height: 639px;
+  margin-top: 20px;
+}
+
+.resultSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.exerciseSection {
+  width: 40%;
+}
+
+.progressSection {
+  width: 55%;
+  padding: 40px;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+}
+
+.progressBar1 {
+  border-radius: 50px;
+  border: 1px solid #565eef;
+  width: 250px;
+  height: 36px;
+}
+
+.progressBar2 {
+  border-radius: 50px;
+  border: 1px solid #ff6d00;
+  width: 50%;
+  height: 36px;
+}
+
+.progressBar3 {
+  border-radius: 50px;
+  border: 1px solid #9a48f1;
+  width: 50%;
+  height: 36px;
+}
+
+.progress1 {
+  color: white;
+  border-radius: 50px 0px 0px 50px;
+  background-color: #565eef;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress2 {
+  color: white;
+  border-radius: 50px 0px 0px 50px;
+  background-color: #ff6d00;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress3 {
+  color: white;
+  border-radius: 50px 0px 0px 50px;
+  background-color: #9a48f1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rowProgressBar {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  align-items: center;
+}
+
+.nameSection {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.allProgress {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.exerciseTitle {
+  height: 40px;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.exerciseList {
+  margin: 30px 0;
+  li {
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 30px;
+    margin: 5px 40px;
+  }
+}

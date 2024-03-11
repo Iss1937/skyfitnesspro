@@ -1,0 +1,103 @@
+.container {
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
+  background: rgb(39, 26, 88);
+  position: relative;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo_white {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.login_button {
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 16px 7px 16px;
+  border-radius: 46px;
+  background: rgb(20, 13, 64);
+  color: rgb(255, 255, 255);
+  font-family: StratosSkyeng;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+}
+
+.subtitle {
+  opacity: 0.5;
+  color: rgb(255, 255, 255);
+  font-family: StratosSkyeng;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 115%;
+  letter-spacing: -0.05px;
+  text-align: left;
+  margin-bottom: 17px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title_text {
+  color: rgb(244, 244, 255);
+  font-family: StratosSkyeng;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 91.5%;
+  letter-spacing: -1.17px;
+  text-align: left;
+  margin-bottom: 17px;
+}
+
+.title_img {
+  margin-right: -64px;
+}
+
+.course_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
+  margin-bottom: 34px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+
+.button_up {
+  width: 160px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 24px 9px 24px;
+  border-radius: 46px;
+  background: rgb(199, 233, 87);
+
+  color: rgb(0, 0, 0);
+  font-family: StratosSkyeng;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.1px;
+  text-align: center;
+  text-decoration: none;
+}

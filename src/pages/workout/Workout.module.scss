@@ -1,0 +1,129 @@
+.container {
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
+}
+
+.section_title {
+  font-family: StratosSkyeng;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: left;
+  padding-bottom: 40px;
+}
+
+.basicText {
+  font-family: StratosSkyeng;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.workout {
+  &Card {
+    position: relative;
+    height: 310px;
+    background-color: #fafafa;
+    border-radius: 30px;
+    &_title {
+      position: absolute;
+      z-index: 1;
+      font-family: StratosSkyeng;
+      font-size: 64px;
+      line-height: 72px;
+      text-align: left;
+      padding-top: 30px;
+      padding-left: 30px;
+      font-weight: 400;
+    }
+    &_img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+    }
+  }
+
+  &Description {
+    font-family: StratosSkyeng;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: justify;
+    font-weight: 400;
+    margin-bottom: 75px;
+  }
+}
+
+.fitting {
+  margin-top: 75px;
+  margin-bottom: 75px;
+  &_textBox {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.criterion {
+  display: flex;
+  gap: 24px;
+  &_counter {
+    width: 67px;
+    height: 67px;
+    border-radius: 33px;
+    background-color: #c7e957;
+    &Text {
+      font-weight: 400;
+      text-align: center;
+      font-family: StratosSkyeng;
+      font-size: 32px;
+      line-height: 40px;
+      justify-content: center;
+      align-items: center;
+      padding-top: 13.5px;
+    }
+  }
+  &_text {
+    width: 244px;
+  }
+}
+
+.directions {
+  margin-bottom: 75px;
+  &_textBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 108px;
+    gap: 5px;
+    column-gap: 168px;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+
+.feedback {
+  position: relative;
+  border-radius: 30px;
+  background-color: #f9ebff;
+  margin-bottom: 95px;
+  padding-left: 52px;
+  padding-bottom: 48px;
+  &_text {
+    font-family: StratosSkyeng;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 823px;
+    padding-top: 46px;
+    margin-bottom: 34px;
+  }
+  &_img {
+    position: absolute;
+    width: 300px;
+    right: 0px;
+    top: 0px;
+  }
+}

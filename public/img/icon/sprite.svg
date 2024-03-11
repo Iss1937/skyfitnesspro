@@ -1,0 +1,24 @@
+<svg>
+    <symbol id="icon-tect-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+    <circle cx="25" cy="25" r="25" fill="#D9D9D9"/>
+    </symbol>
+    <symbol id="icon-class-yoga" width="360" height="480" viewBox="0 0 412 532" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_dd_26_1253)">
+            <g clip-path="url(#clip0_26_1253)">
+            <rect x="26" y="26" width="360" height="480" rx="29.9978" fill="white" />
+            <path d="M57 357.5C57 337.342 73.3416 321 93.5 321C113.658 321 130 337.342 130 357.5V419.5C130 439.658 113.658 456 93.5 456C73.3416 456 57 439.658 57 419.5V357.5Z" fill="#AD61FF" />
+
+            </g>
+        </g>
+        <defs>
+            <filter id="filter0_dd_26_1253" x="0.00117779" y="0" width="411.999" height="531.999" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+
+            </filter>
+
+        </defs>
+    </symbol>
+
+
+
+
+<svg/>

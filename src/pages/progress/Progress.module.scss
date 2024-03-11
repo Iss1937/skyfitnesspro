@@ -1,0 +1,147 @@
+.popup_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  z-index: 1;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 200px;
+  max-width: 366px;
+  top: -1218px;
+  left: -1923px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.logoBox {
+  margin: 33px 73px 38px;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.inputForm {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #d0cece;
+  margin: 0 47px 0 41px;
+  color: black;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: StratosSkyeng;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.05px;
+}
+
+.buttonBox {
+  margin: auto;
+  margin-top: 35px;
+}
+
+.buttonSignup {
+  margin: 20px 47px 47px 41px;
+  padding: 12px 0 16px;
+  width: 278px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #d0cece;
+  flex-shrink: 0;
+  border-radius: 46px;
+  color: #000000;
+  text-decoration: none;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: StratosSkyeng;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.05px;
+
+  &:hover {
+    background: #f4f5f6;
+  }
+
+  &:active {
+    background: #d0cece;
+  }
+}
+
+.textForm {
+  margin: 30px 43px 20px 41px;
+  color: #000;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: StratosSkyeng;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.05px;
+}
+
+.progressForm {
+  max-width: 444px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: #fff;
+  padding-top: 36px;
+  padding-bottom: 44px;
+}
+
+.headerForm {
+  margin: auto;
+  color: #000;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: StratosSkyeng;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.headerProgress {
+  text-align: center;
+  margin: 36px 73px 0;
+  color: #000;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: StratosSkyeng;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.progressCheckForm {
+  max-width: 444px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.imgBox {
+  margin-top: 11px;
+}
+
+.Hand {
+  width: 48%;
+  margin-left: 100px;
+}
