@@ -16,16 +16,26 @@ export const Training = () => {
   const workout = workouts?.filter((data) => data._id.includes(id)); // текущая тренировка
   const workoutName = workout ? workout[0].name : 'название не получено'; // название текущей тренировки
   const workoutVideo = workout ? workout[0].video : 'видео не найдено'; //видео текущей тренировки
-  const workoutExercises = workout && workout[0].exercises ? workout[0].exercises : null; // упражнения текушей тренировки
-  const currentWorkoutt = useSelector((state) => state.coursesApp.currentWorkout); // текущая тренировка пользователя из стейта
+  const workoutExercises =
+    workout && workout[0].exercises ? workout[0].exercises : null; // упражнения текушей тренировки
+  const currentWorkoutt = useSelector(
+    (state) => state.coursesApp.currentWorkout
+  ); // текущая тренировка пользователя из стейта
   const [currentWorkout, setCurrentWorkout] = useState(currentWorkoutt); // текущая тренировка пользователя
   //Информация по курсу
   const courses = useSelector((state) => state.coursesApp.allCourses); // все курсы
   const course = courses?.filter((data) => data.nameEN.includes(courseId)); // текущий курс
   const courseName = course ? course[0].nameRU : 'название не получено'; //название текущего курса на русском
   const courseNameEN = course ? course[0].nameEN : 'название не получено'; //название текущего курса на английском
+  const user = useSelector((state) => state.userApp.fullCurrentUser); // текущий юзер с базы
 
-  console.log(currentWorkout)
+  const userExercises = user
+    ? Object.values(
+        Object.values(user.courses).filter((el) => el.name === courseNameEN)[0]
+          .workouts
+      ).filter((el) => el.name === workoutName)[0].exercises
+    : null;
+
   const navigateToProgress = () => {
     navigate(`/${courseId}/training/${id}/Progress`);
     localStorage.setItem('currentCourse', courseNameEN);
@@ -47,17 +57,19 @@ export const Training = () => {
 
   const endWorkout = () => {
     if (currentWorkout?.done) {
-      return <Button className={'button_blue'} children={'Тренировка завершенa'} />;
+      return (
+        <Button className={'button_blue'} children={'Тренировка завершенa'} />
+      );
     } else {
       return (
-          <Button
-            onClick={() => {
-              completeWorkout(currentWorkout);
-              navigate(`/${courseId}/training/${id}/workoutCompleted`);
-            }}
-            className={'button_blue'}
-            children={'Закончить тренировку'}
-          />
+        <Button
+          onClick={() => {
+            completeWorkout(currentWorkout);
+            navigate(`/${courseId}/training/${id}/workoutCompleted`);
+          }}
+          className={'button_blue'}
+          children={'Закончить тренировку'}
+        />
       );
     }
   };
@@ -80,13 +92,17 @@ export const Training = () => {
                     <li key={exercise.name}>{exercise.name}</li>
                   ))}
                 </ul>
-                <Button onClick={navigateToProgress} className={'button_blue'} children={'Заполнить свой прогресс'} />
+                <Button
+                  onClick={navigateToProgress}
+                  className={'button_blue'}
+                  children={'Заполнить свой прогресс'}
+                />
               </div>
             </>
           ) : (
             endWorkout()
           )}
-          <ProgressExercise exercises={currentWorkout?.exercises} currentId={currentId} />
+          <ProgressExercise exercises={userExercises} currentId={currentId} />
         </section>
       </main>
       <Outlet />
