@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import style from './SelectWorkout.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentWorkout } from '../../store/coursesSlice';
-import { Link, useParams } from 'react-router-dom';
-import made from './made.png';
-import { UpdateUserDetails } from '../../components/userRequest';
+import React, { useEffect, useState } from "react";
+import style from "./SelectWorkout.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentWorkout } from "../../store/coursesSlice";
+import { Link, useParams } from "react-router-dom";
+import made from "./made.png";
+import { UpdateUserDetails } from "../../components/userRequest";
 
 export const SelectWorkout = () => {
+  localStorage.removeItem("newUserProgress");
   const params = useParams();
   const [currentWorkoutsArr, setCurrentWorkoutsArr] = useState([]);
   const currentUser = useSelector((state) => state.userApp.fullCurrentUser);
@@ -22,10 +23,10 @@ export const SelectWorkout = () => {
 
   const dispatch = useDispatch();
   UpdateUserDetails(dispatch);
-  
+
   const handleClick = (el) => {
     console.log(el);
-    localStorage.setItem('currentWorkout', el._id);
+    localStorage.setItem("currentWorkout", el._id);
     dispatch(setCurrentWorkout(el));
   };
 
@@ -49,7 +50,7 @@ export const SelectWorkout = () => {
                   <img
                     className={style.workoutMade_img}
                     src={made}
-                    alt='made'
+                    alt="made"
                   />
                 )}
               </Link>
